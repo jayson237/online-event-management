@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="./layout/default.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">
+        Sign in
+    </ui:define>
+
+    <ui:define name="content">
+        <div style="display: flex; justify-content: center; align-items: center; height: 85vh;">
+            <p:panel style="width: 300px; padding: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <h:form id="form">
+                    <p:growl id="growl" showDetail="true" sticky="false" life="5000"/>
+                    <h:outputText value="Log in" style="font-size: x-large; text-align: center; font-weight: bold;" /> <br/> <br/>
+                    <p:outputLabel for="email" value="Email:" />
+                    <h:panelGroup>
+                        <p:inputText id="email" value="#{authenticationManagedBean.email}" style="width:100%;" required="true" requiredMessage="Email is required"/>
+                        <p:message for="email" />
+                    </h:panelGroup>
+                    <br/><br/>
+
+                    <p:outputLabel for="password" value="Password:" />
+                    <h:panelGroup>
+                        <p:password id="password" value="#{authenticationManagedBean.password}" style="width:100%;" required="true" requiredMessage="Please input your password"/>
+                        <p:message for="password" />
+                    </h:panelGroup>
+                    <br/><br/>
+                    <div style="text-align: left;">
+                        <p:commandButton value="Login" update=":form" action="#{authenticationManagedBean.login}" styleClass="ui-button-primary" style="margin-top:10px; margin-bottom: 20px; " />
+                    </div>
+                    <br/><br/>
+
+
+                    Don't have an account? Register <a href="createAccount.xhtml">here</a>
+                </h:form>
+            </p:panel>
+        </div>
+    </ui:define>
+</ui:composition>

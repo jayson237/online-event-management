@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="./layout/default.xhtml">
+
+    <ui:define name="title">
+        Online Event Management System
+    </ui:define>
+
+    <ui:define name="content">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh;">
+            <h1 style="text-align: center; font-size: 3em; font-weight: bold;">
+                Welcome to Online Event Management System, 
+            </h1>
+             <h1 style="text-align: center; font-size: 3em; font-weight: bold;">
+                your one stop event manager
+            </h1>
+            <p:button value="Get Started" outcome="/login.xhtml" style="margin-top: 20px; font-size: 1.5em;" />
+        </div>
+    </ui:define>
+</ui:composition>
